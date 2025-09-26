@@ -1,0 +1,187 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f4f7f6;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+}
+
+/* Reset Básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Estilo do Container Principal */
+.container {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; /* Limite de largura para desktop */
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.main-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+/* Painéis e Transições */
+.form-panel {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+    padding: 0;
+}
+
+.form-panel.active {
+    opacity: 1;
+    max-height: 1000px; /* Valor alto para garantir que o conteúdo caiba */
+    padding: 10px 0;
+}
+
+.form-panel h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Grupos de Input */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input[type="text"],
+.input-group input[type="tel"],
+.input-group input[type="email"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Botões */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.btn.secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn.secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Links de Alternância */
+.switch-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+.switch-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-link a:hover {
+    text-decoration: underline;
+}
+
+/* Área de Mensagens (Feedback) */
+.message-area {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    display: none; /* Escondido por padrão */
+}
+
+.message-area.error {
+    background-color: #f8d7da;
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+    display: block;
+}
+
+.message-area.success {
+    background-color: #d4edda;
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+    display: block;
+}
+
+/* Responsividade: Para telas menores (Mobile First) */
+@media (max-width: 500px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 20px;
+        box-shadow: none; /* Remove a sombra no mobile para melhor visualização */
+        border-radius: 0;
+    }
+    
+    .main-title {
+        font-size: 1.5em;
+    }
+}

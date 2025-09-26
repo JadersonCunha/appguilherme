@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e Login Responsivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Seja Bem-Vindo(a)!</h1>
+        
+        <div id="message-area" class="message-area"></div>
+
+        <div id="register-panel" class="form-panel active">
+            <h2>Criar Nova Conta</h2>
+            <form id="register-form">
+                <div class="input-group">
+                    <label for="reg-name">Nome Completo</label>
+                    <input type="text" id="reg-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-phone">Telefone</label>
+                    <input type="tel" id="reg-phone" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-email">E-mail</label>
+                    <input type="email" id="reg-email" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-password">Senha</label>
+                    <input type="password" id="reg-password" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-confirm-password">Confirme a Senha</label>
+                    <input type="password" id="reg-confirm-password" required>
+                </div>
+                <button type="submit" class="btn primary">Cadastrar</button>
+            </form>
+            <p class="switch-link">
+                Já tem conta? <a href="#" id="show-login">Faça Login</a>
+            </p>
+        </div>
+
+        <div id="login-panel" class="form-panel hidden">
+            <h2>Acesso à Área do Cliente</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="login-name">Nome de Usuário</label>
+                    <input type="text" id="login-name" required> 
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn primary">Entrar</button>
+            </form>
+            <p class="switch-link">
+                Ainda não tem conta? <a href="#" id="show-register">Cadastre-se</a>
+            </p>
+        </div>
+        
+        <div id="success-panel" class="form-panel hidden">
+            <h2>🎉 Login Realizado com Sucesso!</h2>
+            <p>Bem-vindo(a) à sua área exclusiva, <strong id="welcome-user"></strong>.</p>
+            <button id="logout-btn" class="btn secondary">Sair</button>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
