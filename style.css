@@ -37,6 +37,13 @@ body {
     transition: all 0.3s ease;
 }
 
+.logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+}
+
 .main-title {
     text-align: center;
     color: var(--primary-color);
@@ -180,6 +187,8 @@ body {
         box-shadow: none; /* Remove a sombra no mobile para melhor visualização */
         border-radius: 0;
     }
+    
+
     
     .main-title {
         font-size: 1.5em;
